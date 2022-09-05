@@ -1,0 +1,90 @@
+<!-- Interpolation -->
+<h1 class="header">{{title}}</h1>
+
+<!-- Click Event -->
+<button (click)="getName()">Function Call</button>
+
+<br/>
+<br/>
+
+<!-- Keyup Event -->
+<input type="text" #val (keyup)="getData(val.value)" placeholder="Keyup event" name="name">
+
+<br/>
+<br/>
+
+<!-- Keydown Event -->
+<input type="text" #val2 (keydown)="getData(val2.value)" placeholder="Keydown event" name="name">
+
+<br/>
+<br/>
+
+<!-- Blur Event -->
+<input type="text" #val3 (blur)="getData(val3.value)" placeholder="Blur event" name="name">
+
+<br/>
+<br/>
+
+<!-- Mouse Events -->
+<h1 (mouseover)="disData()"> Mouse Over </h1>
+<h1 (mouseleave)="disData()"> Mouse Leave </h1>
+
+<h3>Input value is: {{displayVal}}</h3>
+<!-- Mouse Events -->
+
+<br/>
+
+<!-- Counter -->
+<h1 class="header">Counter</h1>
+
+<button (click)="counter('add')">Increase Counter</button>
+<p>Counter Value: {{counterVal}}</p>
+<button (click)="counter('minus')">Decrease Counter</button>
+<!-- Counter -->
+
+<!-- If & If-Else Condition -->
+<h1 class="header">If-Else Condition</h1>
+
+<h1 *ngIf="show=='true'; then ifBlock else elseBlock"></h1>
+
+<ng-template #ifBlock>In If Block</ng-template>
+<ng-template #elseBlock>In Else Block</ng-template>
+
+<br/>
+
+<Button (click)="valfalse('false')">Pass false Value</Button>
+<!-- If & If-Else Condition -->
+
+<!-- Multiple Condition or Else-if Condition -->
+<h1 class="header">Multiple Condition or Else-if Condition</h1>
+
+ <ng-template [ngIf]="color==='green'">
+  <h1 style="color: green;">Green Colour</h1>
+</ng-template>
+
+<ng-template [ngIf]="color==='red'">
+  <h1 style="color: red;">Red Colour</h1>
+</ng-template>
+<!-- Multiple Condition or Else-if Condition -->
+
+<!-- Switch Case -->
+<h1 class="header">Switch Case</h1>
+
+<ng-template [ngSwitch]="switchcase">
+
+  <h1 *ngSwitchCase="'green'" style="color: green;">Green colour</h1>
+  <h1 *ngSwitchCase="'red'" style="color: red;">Red colour</h1>
+  <h1 *ngSwitchCase="'yellow'" style="color: yellow;">Yellow colour</h1>
+  <h1 *ngSwitchDefault>Unknown colour</h1>
+
+</ng-template>
+<!-- Switch Case -->
+
+<!-- For loop -->
+<h1 class="header">For loop</h1>
+
+<h4 *ngFor="let item of users">Array list: {{item}}</h4>
+
+<h4 *ngFor="let items of usersDetails">Array of Objects: Name: {{items.name}} Email: {{items.email}} Phone: {{items.phone}}</h4>
+<!-- For loop -->
+
